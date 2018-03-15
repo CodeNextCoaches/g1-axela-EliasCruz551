@@ -1,9 +1,9 @@
 (function () {
 
-  var input,
-      submit,
-      message,
-      advancedDiv,
+  var input = document.querySelector("#axela-input"),
+      submit = document.querySelector("#axela-submit"),
+      message = document.querySelector("#axela-message"),
+      advancedDiv = document.querySelector("#advanced"),
       errorText = "I don't understand you.",
       dunnoText = "I wasn't programmed to know that.",
       picture = null,
@@ -48,6 +48,48 @@
       the message element to errorText.
    */
 
+
+   function processInput() {
+     if(advancedDiv.contains(picture)) {
+       picture.removeChild();
+     }
+     var words = input.value.toLowerCase().trim().split(" ");
+     input.value = '';
+
+     if(words.length == 1) {
+       if(greetings.indexOf(words[0]) > -1) {
+         message.innerHTML = 'Greetings!';
+       } else {
+         message.innerHTML = errorText;
+       }
+     } else if (words.length == 2) {
+       switch(words[0]){
+         case "who":
+         who(words[1]);
+         break;
+         case "what":
+         what(words[1]);
+         break;
+         case "where":
+         where(words[1]);
+         break;
+         case "tell":
+         tell(words[1]);
+         break;
+         case "show":
+         show(words[1]);
+         break;
+         default:
+         message.innerHTML = errorText;
+       }
+     }else{
+       message.innerHTML = errorText;
+     }
+
+
+
+   }
+
   /*
    * who(word)
    * This function sets the innerHTML of the message element to specific text,
@@ -62,7 +104,68 @@
      dunnoText, NOT errorText (since it's not an error per se, Axela just
      doesn't know what they're referring to.)
    */
+function who(word){
+  switch (expression){
+    case 'you':
+    message.innerHTML = 'I am Axela, of course';
 
+    case 'me':
+    message.innerHTML = 'You are you';
+
+    case 'cool':
+    message.innerHTML = 'Coach Elias';
+    break;
+    default:
+    message.innerHTML = dunnoText;
+  }
+}
+function what(word){
+  switch (expression){
+    case 'life':
+    message.innerHTML = 'Life is crazy';
+
+    case 'pi':
+    message.innerHTML = 'Today is pi day';
+
+    case 'love':
+    message.innerHTML = 'Some tough stuff';
+    break;
+    default:
+    message.innerHTML = dunnoText;
+  }
+}
+
+function where(word){
+  switch (expression){
+    case 'me':
+    message.innerHTML = 'You are a very good person';
+
+    case 'atlantis':
+    message.innerHTML = 'Crazy place';
+
+    case 'food':
+    message.innerHTML = 'You need a lot of it';
+    break;
+    default:
+    message.innerHTML = dunnoText;
+  }
+}
+
+function tell(word){
+  switch (expression){
+    case 'joke':
+    message.innerHTML = 'Im not good at telling jokes';
+
+    case 'poem':
+    message.innerHTML = 'Complicated';
+
+    case 'quote':
+    message.innerHTML = 'Coach Elias';
+    break;
+    default:
+    message.innerHTML = dunnoText;
+  }
+}
   /*
    * what(word)
    * See above.
@@ -82,6 +185,8 @@
    * show(word)
    * See above.
    */
-
-
+functio doubleUp(num){
+  console.log(num*2);
+}
+doubleUp(4);
 })();

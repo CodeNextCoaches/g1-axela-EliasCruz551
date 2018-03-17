@@ -4,7 +4,7 @@
       submit = document.querySelector("#axela-submit"),
       message = document.querySelector("#axela-message"),
       advancedDiv = document.querySelector("#advanced"),
-      errorText = "I don't understand you.",
+      errorText = "Uhhmmm are you speaking english orrr?????.",
       dunnoText = "I wasn't programmed to know that.",
       picture = null,
       greetings = ["hi", "sup", "hello", "hola", "wasup"];
@@ -63,29 +63,28 @@
          message.innerHTML = errorText;
        }
      } else if (words.length == 2) {
-       switch(words[0]){
+       switch(words[0]) {
          case "who":
-         who(words[1]);
-         break;
+           who(words[1]);
+           break;
          case "what":
-         what(words[1]);
-         break;
+           what(words[1]);
+           break;
          case "where":
-         where(words[1]);
-         break;
+           where(words[1]);
+           break;
          case "tell":
-         tell(words[1]);
-         break;
+           tell(words[1]);
+           break;
          case "show":
-         show(words[1]);
-         break;
+           show(words[1]);
+           break;
          default:
-         message.innerHTML = errorText;
+           message.innerHTML = errorText;
        }
-     }else{
+     } else {
        message.innerHTML = errorText;
      }
-
 
 
    }
@@ -104,72 +103,52 @@
      dunnoText, NOT errorText (since it's not an error per se, Axela just
      doesn't know what they're referring to.)
    */
-function who(word){
-  switch (expression){
-    case 'you':
-    message.innerHTML = 'I am Axela, of course';
 
-    case 'me':
-    message.innerHTML = 'You are you';
+   function who(word) {
+     switch(word) {
+       case 'you':
+         message.innerHTML = 'Aye bruh im alexa you should know dis';
+         break;
+       case 'me':
+         message.innerHTML = 'You are CBL ELI';
+         break;
+       case 'cool':
+         message.innerHTML = 'YO BIG RIPPPEEERRRRRRRRR';
+         break;
+       default:
+         message.innerHTML = dunnoText;
+     }
+   }
 
-    case 'cool':
-    message.innerHTML = 'Coach Elias';
-    break;
-    default:
-    message.innerHTML = dunnoText;
-  }
-}
-function what(word){
-  switch (expression){
-    case 'life':
-    message.innerHTML = 'Life is crazy';
+   function what(word) {
+     switch(word) {
+       case 'life':
+         message.innerHTML = 'Enjoy your life';
+         break;
+       case 'pi':
+         message.innerHTML = 'It waass Pi day not to long ago';
+         break;
+       case 'love':
+         message.innerHTML = 'very complicated thing';
+         break;
+       default:
+         message.innerHTML = dunnoText;
+     }
+   }
 
-    case 'pi':
-    message.innerHTML = 'Today is pi day';
-
-    case 'love':
-    message.innerHTML = 'Some tough stuff';
-    break;
-    default:
-    message.innerHTML = dunnoText;
-  }
-}
-
-function where(word){
-  switch (expression){
-    case 'me':
-    message.innerHTML = 'You are a very good person';
-
-    case 'atlantis':
-    message.innerHTML = 'Crazy place';
-
-    case 'food':
-    message.innerHTML = 'You need a lot of it';
-    break;
-    default:
-    message.innerHTML = dunnoText;
-  }
-}
-
-function tell(word){
-  switch (expression){
-    case 'joke':
-    message.innerHTML = 'Im not good at telling jokes';
-
-    case 'poem':
-    message.innerHTML = 'Complicated';
-
-    case 'quote':
-    message.innerHTML = 'Coach Elias';
-    break;
-    default:
-    message.innerHTML = dunnoText;
+function show(word) {
+  switch(word){
+    case 'dog':
+    picture = document.createElement('img');
+    picture.src =
   }
 }
   /*
    * what(word)
    * See above.
    */
+
+
 
   /*
    * where(word)
@@ -185,8 +164,12 @@ function tell(word){
    * show(word)
    * See above.
    */
-functio doubleUp(num){
-  console.log(num*2);
-}
-doubleUp(4);
+
+  //  function doubleUp(num) {
+  //    console.log(num*2);
+  //  }
+   //
+  //  doubleUp(4);
+
+
 })();

@@ -1,8 +1,8 @@
 (function () {
 
-  let input = document.querySelector('#iris-input'),
-      submit = document.querySelector('#iris-submit'),
-      message = document.querySlector('#iris-submit'),
+  var input = document.querySelector('#axela-input'),
+      submit = document.querySelector('#axela-submit'),
+      message = document.querySelector('#axela-message'),
       validInputs = [
         "Where do you live?",
         "What are you?",
@@ -16,10 +16,13 @@
         "42. Duh.",
         "What do you call a swindler going down some stairs? <br>Condescending. Ha!"];
 
-        console.log(input);
+
+
+
+
 
   // Add event listeners to text input and submit button below
-submit.addEventListener('click', processinput);
+submit.addEventListener('click', processInput);
 input.addEventListener('keypressed', checkKey);
 
   // This function checks if the user has pressed "ENTER" on their keyboard.
@@ -47,7 +50,12 @@ input.addEventListener('keypressed', checkKey);
    function processInput(){
 let currentInput = input.valur;
 input.value = '';
-allert(currentInput);
+if(validInputs.indexOf(currentInput) == -1){
+  message.innerHTML = "Uhhmmm are you speaking english orrr?????.";
+
+}else{
+message.innerHTML = responses[validInputs.indexOf(currentInput)];
+}
 
    }
 

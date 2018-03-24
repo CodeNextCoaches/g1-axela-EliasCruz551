@@ -140,7 +140,7 @@ function show(word) {
   switch(word){
     case 'dog':
     picture = document.createElement('img');
-    picture.src =
+  
   }
 }
   /*
